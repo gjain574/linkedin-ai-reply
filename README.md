@@ -1,6 +1,8 @@
 # LinkedIn AI Reply Assistant
 
-This project is a browser extension that adds an AI assistant to LinkedIn messaging, helping users compose better replies.
+This project is a browser extension that adds an AI assistant to LinkedIn messaging, helping users compose better replies. Demo attached below ⬇️
+
+[Demo URL](https://github.com/user-attachments/assets/29cae10e-05f8-4e03-abf9-20e5954e3e01)
 
 ## Features
 
