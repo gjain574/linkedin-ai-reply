@@ -55,11 +55,18 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, messageContainerID }) =>
     const handleInsertButton = () => {
         const linkedinEditorLocation = document.querySelector(`[data-ai-assistant-id="${messageContainerID}"] .msg-form__contenteditable`);
         const placeholderElement = document.querySelector(`[data-ai-assistant-id="${messageContainerID}"] .msg-form__placeholder`);
+        const parentFormElement = document.querySelector(`[data-ai-assistant-id="${messageContainerID}"]`)?.closest('form');
+        const sendButtonElement = parentFormElement?.querySelector('.msg-form__send-button');
 
         if (linkedinEditorLocation) {
             setError('');
             linkedinEditorLocation.innerHTML = `<div>${generatedReply}</div>`;
+            // Remove placeholder   
             placeholderElement?.classList.remove('msg-form__placeholder');
+            // Remove disabled attribute from send button
+            sendButtonElement?.removeAttribute('disabled');
+            // Set type to submit
+            sendButtonElement?.setAttribute('type', 'submit');
             // Close the modal after inserting the generated reply
             onClose();
         }else{
